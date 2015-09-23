@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>First Assignment</title>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body data-ng-app="myapp">
+    <div data-ng-controller="LoginController">
+        <form name="myForm" data-ng-submit="Login()" novalidate>
+
+            <p>
+                Username:<br>
+                <input type="text" name="username" data-ng-model="username" data-ng-required="true">
+                <span style="color: red" data-ng-show="myForm.username.$dirty && myForm.username.$invalid">
+                    <span data-ng-show="myForm.username.$error.required">Username is required.</span>
+                </span>
+            </p>
+
+            <p>
+                Password:<br>
+                <input type="password" name="password" data-ng-model="password" data-ng-required="true">
+                <span style="color: red" data-ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                    <span data-ng-show="myForm.password.$error.required">Password is required.</span>
+                </span>
+            </p>
+
+            <p>
+                <input type="submit" value="Login">
+            </p>
+
+        </form>
+    </div>
+    <script src="JS/App.js"></script>
+    <script src="JS/Controller/LoginController.js"></script>
+</body>
+</html>
